@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,17 @@ using UnityEngine.EventSystems;
 public class BuildingManager : MonoBehaviour
 {
     public static BuildingManager Instance {  get; private set; }
-    
+
+    public event EventHandler<OnActiveBuildingTypeChangeArgs> OnActiveBuildingTypeChange;
+    public class OnActiveBuildingTypeChangeArgs : EventArgs
+    {
+        public BuildingTypeSO activeBuildingType;
+    }
+
     private BuildingTypeListSO buildingTypeList;
     private BuildingTypeSO activeBuildingType;
 
-    private void Start()
+    private void Awake()
     {
         Instance = this;
 
@@ -23,22 +30,18 @@ public class BuildingManager : MonoBehaviour
         {
             if (activeBuildingType != null)
             {
-                Instantiate(activeBuildingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
+                Instantiate(activeBuildingType.prefab, UtilsClass.GetMouseWorldPosition(), Quaternion.identity);
             }
         }
-    }
-
-    private Vector3 GetMouseWorldPosition()
-    {
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPosition.z = 0;
-
-        return mouseWorldPosition;
     }
 
     public void SetActiveBuildingType(BuildingTypeSO buildingType)
     {
         activeBuildingType = buildingType;
+        OnActiveBuildingTypeChange?.Invoke(this, new OnActiveBuildingTypeChangeArgs
+        {
+            activeBuildingType = activeBuildingType
+        });
     }
 
     public BuildingTypeSO GetActiveBuildingType() => activeBuildingType;

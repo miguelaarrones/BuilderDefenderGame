@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5224324104286025307}
-  - component: {fileID: 3838575248000600099}
-  - component: {fileID: -716198644867163731}
+  - component: {fileID: -1681524179554678885}
+  - component: {fileID: -7892035502040747575}
   m_Layer: 0
-  m_Name: StoneHarvester
+  m_Name: GoldHarvester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 6250785566736645304}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3838575248000600099
+--- !u!114 &-1681524179554678885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119cd33b5f7b3124987ea41be904d330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-716198644867163731
+--- !u!114 &-7892035502040747575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdc63f4404eada46a05bcbe91451d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: {fileID: 11400000, guid: a0727a6b553081c4285d85d4cf93da1c, type: 2}
+  buildingType: {fileID: 11400000, guid: 04fe8e0ec337f8140bbb6daa4088e4c3, type: 2}
 --- !u!1 &7959510391414576187
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6250785566736645304}
   - component: {fileID: 1740802698900830182}
+  - component: {fileID: 4852444330915722213}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -132,7 +133,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2263e91ebcd2a254dab5f4caccb4a7af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ead931dd91bff8489e75de9c414f17f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,3 +144,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4852444330915722213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7959510391414576187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c64f077c7d0de4f99ed301fb27949e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runOnce: 1
+  positionOffsetY: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 609909751227243689}
   - component: {fileID: 8462922547845154685}
   m_Layer: 0
-  m_Name: pfHQVisual
+  m_Name: HQVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

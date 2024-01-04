@@ -5066,7 +5066,7 @@ GameObject:
   - component: {fileID: 5191442329625139611}
   - component: {fileID: 3261328043409199989}
   m_Layer: 0
-  m_Name: pfStoneHarvesterVisual
+  m_Name: StoneHarvesterVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

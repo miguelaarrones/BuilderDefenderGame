@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,6 +6,7 @@ using UnityEngine;
 public class BuildingGhost : MonoBehaviour
 {
     [SerializeField] private Transform spriteGameObject;
+    [SerializeField] private ResourceNearbyOverlay resourceNearbyOverlay;
 
     private void Awake()
     {
@@ -22,10 +23,12 @@ public class BuildingGhost : MonoBehaviour
         if (args.activeBuildingType == null)
         {
             Hide();
+            resourceNearbyOverlay.Hide();
         } 
         else
         {
             Show(args.activeBuildingType.sprite);
+            resourceNearbyOverlay.Show(args.activeBuildingType.resourceGeneratorData);
         }
     }
 

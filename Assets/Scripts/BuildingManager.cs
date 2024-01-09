@@ -50,11 +50,6 @@ public class BuildingManager : MonoBehaviour
                 }
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Enemy.Create(UtilsClass.GetMouseWorldPosition() + UtilsClass.GetRandomDir());
-        }
     }
 
     public void SetActiveBuildingType(BuildingTypeSO buildingType)

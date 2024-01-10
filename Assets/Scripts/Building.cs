@@ -7,10 +7,12 @@ public class Building : MonoBehaviour
     private HealthSystem healthSystem;
     private BuildingTypeSO buildingType;
     [SerializeField] private Transform buildingDemolishButton;
+    [SerializeField] private Transform buildingRepairButton;
 
     private void Awake()
     {
         HideBuildingDemolishButton();
+        HideBuildingRepairButton();
     }
 
     // Start is called before the first frame update
@@ -20,7 +22,23 @@ public class Building : MonoBehaviour
         healthSystem = GetComponent<HealthSystem>();
 
         healthSystem.SetHealthAmountMax(buildingType.healthAmountMax, true);
+        healthSystem.OnDamaged += HealthSystem_OnDamaged;
+        healthSystem.OnHealed += HealthSystem_OnHealed;
+
         healthSystem.OnDied += HealthSystem_OnDied;
+    }
+
+    private void HealthSystem_OnHealed(object sender, System.EventArgs e)
+    {
+        if (healthSystem.IsFullHealth())
+        {
+            HideBuildingRepairButton();
+        }
+    }
+
+    private void HealthSystem_OnDamaged(object sender, System.EventArgs e)
+    {
+        ShowBuildingRepairButton();
     }
 
     private void HealthSystem_OnDied(object sender, System.EventArgs e)
@@ -51,6 +69,22 @@ public class Building : MonoBehaviour
         if (buildingDemolishButton != null)
         {
             buildingDemolishButton.gameObject.SetActive(false);
+        }
+    }
+
+    private void ShowBuildingRepairButton()
+    {
+        if (buildingRepairButton != null)
+        {
+            buildingRepairButton.gameObject.SetActive(true);
+        }
+    }
+
+    private void HideBuildingRepairButton()
+    {
+        if (buildingRepairButton != null)
+        {
+            buildingRepairButton.gameObject.SetActive(false);
         }
     }
 }

@@ -46,7 +46,8 @@ public class OptionsUI : MonoBehaviour
 
         mainMenuButton.onClick.AddListener(() =>
         {
-
+            Time.timeScale = 1f;
+            GameSceneManager.Load(GameSceneManager.Scene.MainMenuScene);
         });
     }
 

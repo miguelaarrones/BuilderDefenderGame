@@ -19,7 +19,7 @@ public class EnemyWaveUI : MonoBehaviour
 
     private void EnemyWaveManager_OnWaveNumberChanged(object sender, System.EventArgs e)
     {
-        SetWaveNumberText($"Wave {enemyWaveManager.GetNextWaveSpawnTimer()}");
+        SetWaveNumberText($"Wave {enemyWaveManager.GetWaveNumber()}");
     }
 
     private void Update()

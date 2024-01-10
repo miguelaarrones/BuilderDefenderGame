@@ -6,6 +6,12 @@ public class Building : MonoBehaviour
 {
     private HealthSystem healthSystem;
     private BuildingTypeSO buildingType;
+    [SerializeField] private Transform buildingDemolishButton;
+
+    private void Awake()
+    {
+        HideBuildingDemolishButton();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,5 +26,31 @@ public class Building : MonoBehaviour
     private void HealthSystem_OnDied(object sender, System.EventArgs e)
     {
         Destroy(gameObject);
+    }
+
+    private void OnMouseEnter()
+    {
+        ShowBuildingDemolishButton();
+    }
+
+    private void OnMouseExit()
+    {
+        HideBuildingDemolishButton();
+    }
+
+    private void ShowBuildingDemolishButton()
+    {
+        if (buildingDemolishButton != null)
+        {
+            buildingDemolishButton.gameObject.SetActive(true);
+        }
+    }
+
+    private void HideBuildingDemolishButton()
+    {
+        if (buildingDemolishButton != null)
+        {
+            buildingDemolishButton.gameObject.SetActive(false);
+        }
     }
 }

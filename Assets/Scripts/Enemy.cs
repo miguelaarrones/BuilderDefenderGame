@@ -6,8 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public static Enemy Create(Vector3 position)
     {
-        Transform enemyPrefab = Resources.Load<Transform>("Enemy");
-        Transform enemyTransform = Instantiate(enemyPrefab, position, Quaternion.identity);
+        Transform enemyTransform = Instantiate(GameAssets.Instance.enemy, position, Quaternion.identity);
         Enemy enemy = enemyTransform.GetComponent<Enemy>();
         return enemy;
     }
@@ -43,7 +42,7 @@ public class Enemy : MonoBehaviour
 
     private void HealthSystem_OnDied(object sender, System.EventArgs e)
     {
-        Instantiate(Resources.Load<Transform>("EnemyDieParticles"), transform.position, Quaternion.identity);
+        Instantiate(GameAssets.Instance.enemyDieParticles, transform.position, Quaternion.identity);
 
         Destroy(gameObject);
         SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);

@@ -18,7 +18,7 @@ public class BuildingTypeSelectUI : MonoBehaviour
     {
         buttonTemplate.gameObject.SetActive(false);
 
-        BuildingTypeListSO buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
+        BuildingTypeListSO buildingTypeList = GameAssets.Instance.buildingTypeListSO;
 
         buttonTransformDictionary = new Dictionary<BuildingTypeSO, Transform>();
 

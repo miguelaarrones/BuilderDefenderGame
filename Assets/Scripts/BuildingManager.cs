@@ -24,7 +24,7 @@ public class BuildingManager : MonoBehaviour
     {
         Instance = this;
 
-        buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
+        buildingTypeList = GameAssets.Instance.buildingTypeListSO;
     }
 
     private void Start()

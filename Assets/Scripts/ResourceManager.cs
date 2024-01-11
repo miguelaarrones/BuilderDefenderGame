@@ -19,7 +19,7 @@ public class ResourceManager : MonoBehaviour
         Instance = this;
 
         resourceAmountDictionary = new Dictionary<ResourceTypeSO, int>();
-        ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
+        ResourceTypeListSO resourceTypeList = GameAssets.Instance.resourceTypeListSO;
 
         foreach (ResourceTypeSO resourceType in resourceTypeList.list)
         {

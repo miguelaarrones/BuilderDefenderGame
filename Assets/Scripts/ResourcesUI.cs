@@ -13,7 +13,7 @@ public class ResourcesUI : MonoBehaviour
 
     private void Awake()
     {
-        resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
+        resourceTypeList = GameAssets.Instance.resourceTypeListSO;
 
         resourceTypeTransformDictionary = new Dictionary<ResourceTypeSO, Transform>();
         

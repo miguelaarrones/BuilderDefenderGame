@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &554497622246752048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8288287356819219164}
+  - component: {fileID: 6498470722135657055}
+  m_Layer: 0
+  m_Name: GameAssets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8288287356819219164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554497622246752048}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6498470722135657055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554497622246752048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20122bb3533c0ec4fa4622d505cb7aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 8112040639294616850, guid: dd02ed9e93af6f24d9537ca51679f699, type: 3}
+  arrowProjectile: {fileID: 5690402568606202331, guid: 03cbcd663252a0f46b07562a9b26d4a9, type: 3}
+  resourceTypeListSO: {fileID: 11400000, guid: 5d78975914455b7408b8c67083caaac7, type: 2}
+  buildingTypeListSO: {fileID: 11400000, guid: 63ea3f136d1c8fc4ab2c73064b4dd987, type: 2}
+  buildingConstruction: {fileID: 394028400422593623, guid: c64363ee742bfcf43a3d33dc50c636eb, type: 3}
+  buildingPlacedParticles: {fileID: 1408080632602542178, guid: 4ac58936248f3144db274df6c4356236, type: 3}
+  buildingDestroyedParticles: {fileID: 222898084527167713, guid: 5731055b57af76744aa0f260d9e0e788, type: 3}
+  enemyDieParticles: {fileID: 4850068476918138423, guid: fa53ff3e077270e4d8a679c8fa7de07f, type: 3}

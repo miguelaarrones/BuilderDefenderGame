@@ -6,13 +6,24 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField] private HealthSystem healthSystem;
     [SerializeField] private Transform barTransform;
+    [SerializeField] private Transform separatorContainer;
+    [SerializeField] private Transform separatorTemplate;
 
     private void Start()
     {
+        ConstructHealthBarSeparators();
+
+        healthSystem.OnHealthAmountMaxChanged += HealthSystem_OnHealthAmountMaxChanged;
         healthSystem.OnDamaged += HealthSystem_OnDamaged;
         healthSystem.OnHealed += HealthSystem_OnHealed;
+
         UpdateHealthBar();
         UpdateHealthBarVisible();
+    }
+
+    private void HealthSystem_OnHealthAmountMaxChanged(object sender, System.EventArgs e)
+    {
+        ConstructHealthBarSeparators();
     }
 
     private void HealthSystem_OnHealed(object sender, System.EventArgs e)
@@ -25,6 +36,29 @@ public class HealthBar : MonoBehaviour
     {
         UpdateHealthBar();
         UpdateHealthBarVisible();
+    }
+
+    private void ConstructHealthBarSeparators()
+    {
+        separatorTemplate.gameObject.SetActive(false);
+
+        foreach(Transform separatorTransform in separatorContainer)
+        {
+            if (separatorTransform == separatorTemplate) continue;
+            Destroy(separatorTransform.gameObject);
+        }
+
+        int healthAmountPerSeparator = 10;
+        float barsSize = 3f;
+        float barOneHealthAmountSize = barsSize / healthSystem.GetHealthAmountMax();
+        int healthSeparatorCount = Mathf.FloorToInt(healthSystem.GetHealthAmountMax() / healthAmountPerSeparator);
+
+        for (int i = 1; i < healthSeparatorCount; i++)
+        {
+            Transform separatorTransform = Instantiate(separatorTemplate, separatorContainer);
+            separatorTransform.gameObject.SetActive(true);
+            separatorTransform.localPosition = new Vector3(barOneHealthAmountSize * i * healthAmountPerSeparator, 0, 0);
+        }
     }
 
     private void UpdateHealthBar()
@@ -41,5 +75,6 @@ public class HealthBar : MonoBehaviour
         {
             gameObject.SetActive(true);
         }
+        gameObject.SetActive(true) ;
     }
 }

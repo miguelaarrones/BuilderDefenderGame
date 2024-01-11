@@ -42,6 +42,7 @@ public class Building : MonoBehaviour
         SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingDamaged);
 
         CinemachineShake.Instance.ShakeCamera(7f, .15f);
+        ChromaticAberrationScript.Instance.SetWeight(1f);
     }
 
     private void HealthSystem_OnDied(object sender, System.EventArgs e)
@@ -51,6 +52,7 @@ public class Building : MonoBehaviour
         SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingDestroyed);
 
         CinemachineShake.Instance.ShakeCamera(10f, .2f);
+        ChromaticAberrationScript.Instance.SetWeight(1f);
     }
 
     private void OnMouseEnter()

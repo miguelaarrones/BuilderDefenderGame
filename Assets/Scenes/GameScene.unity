@@ -5032,6 +5032,7 @@ Transform:
   - {fileID: 1942382658}
   - {fileID: 1729932484}
   - {fileID: 1538361659}
+  - {fileID: 791418809}
   - {fileID: 914148798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13897,6 +13898,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6895741883004421649, guid: 464f954c4cb3d914ca4603a393de90a7, type: 3}
   m_PrefabInstance: {fileID: 1894592172}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &791418808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 791418809}
+  - component: {fileID: 791418811}
+  - component: {fileID: 791418810}
+  m_Layer: 0
+  m_Name: PostProcessingChromaticAberration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &791418809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791418808}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310146347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &791418810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791418808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b128756159a6e64e8a7af73b960a8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &791418811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791418808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: ae08a1faa3f7a294b83ff41a632c8c09, type: 2}
 --- !u!1001 &791629534
 PrefabInstance:
   m_ObjectHideFlags: 0

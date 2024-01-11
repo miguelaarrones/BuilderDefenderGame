@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
     {
         SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
         CinemachineShake.Instance.ShakeCamera(2f, .1f);
+        ChromaticAberrationScript.Instance.SetWeight(.5f);
     }
 
     private void HealthSystem_OnDied(object sender, System.EventArgs e)
@@ -48,6 +49,7 @@ public class Enemy : MonoBehaviour
         SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
 
         CinemachineShake.Instance.ShakeCamera(7f, .15f);
+        ChromaticAberrationScript.Instance.SetWeight(.5f);
     }
 
     private void Update()

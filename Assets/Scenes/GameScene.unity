@@ -5599,11 +5599,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingResourceAmountList:
   - resourceTypeSO: {fileID: 11400000, guid: b218c2ae6f436a94bab4c5849c0552be, type: 2}
-    amount: 100
+    amount: 10
   - resourceTypeSO: {fileID: 11400000, guid: 84cd57b28feaccd4b898aca4aad690fb, type: 2}
-    amount: 100
+    amount: 0
   - resourceTypeSO: {fileID: 11400000, guid: 5ee94013afdf0494eaf2e71f3e5761a6, type: 2}
-    amount: 100
+    amount: 0
 --- !u!4 &346234037
 Transform:
   m_ObjectHideFlags: 0

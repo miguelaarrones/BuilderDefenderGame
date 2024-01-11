@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPosition: {fileID: 1409680475831809673}
-  shootTimerMax: 0.3
+  shootTimerMax: 0.2
 --- !u!1 &4943171070928447507
 GameObject:
   m_ObjectHideFlags: 0

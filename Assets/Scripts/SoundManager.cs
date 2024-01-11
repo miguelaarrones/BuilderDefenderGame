@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class SoundManager : MonoBehaviour
 {
+    private const string PLAYER_PREFS_SOUND_VOLUME = "SoundVolume";
+
     public static SoundManager Instance { get; private set; }
 
     public enum Sound
@@ -28,6 +31,8 @@ public class SoundManager : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
 
+        volume = PlayerPrefs.GetFloat(PLAYER_PREFS_SOUND_VOLUME, .5f);
+
         soundAudioClipDictionary = new Dictionary<Sound, AudioClip>();
         foreach(Sound sound in System.Enum.GetValues(typeof(Sound)))
         {
@@ -44,12 +49,16 @@ public class SoundManager : MonoBehaviour
     {
         volume += .1f;
         volume = Mathf.Clamp01(volume);
+
+        PlayerPrefs.SetFloat(PLAYER_PREFS_SOUND_VOLUME, volume);
     }
 
     public void DecreaseVolume()
     {
         volume -= .1f;
         volume = Mathf.Clamp01(volume);
+
+        PlayerPrefs.SetFloat(PLAYER_PREFS_SOUND_VOLUME, volume);
     }
 
     public float GetVolume() => volume;

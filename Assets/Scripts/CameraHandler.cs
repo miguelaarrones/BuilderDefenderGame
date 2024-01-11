@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
+    private const string PLAYER_PREFS_EDGE_SCROLLING = "EdgeScrolling";
+
     public static CameraHandler Instance { get; private set; }
 
     [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
@@ -24,6 +26,7 @@ public class CameraHandler : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        edgeScrolling = PlayerPrefs.GetInt(PLAYER_PREFS_EDGE_SCROLLING, 1) == 1;
     }
 
     private void Start()
@@ -80,6 +83,7 @@ public class CameraHandler : MonoBehaviour
     public void SetEdgeScrolling(bool edgeScrolling)
     {
         this.edgeScrolling = edgeScrolling;
+        PlayerPrefs.SetInt(PLAYER_PREFS_EDGE_SCROLLING, edgeScrolling ? 1 : 0);
     }
 
     public bool GetEdgeScrolling() => edgeScrolling;

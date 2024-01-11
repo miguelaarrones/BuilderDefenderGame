@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
     private void HealthSystem_OnDamaged(object sender, System.EventArgs e)
     {
         SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
+        CinemachineShake.Instance.ShakeCamera(2f, .1f);
     }
 
     private void HealthSystem_OnDied(object sender, System.EventArgs e)
@@ -45,6 +46,8 @@ public class Enemy : MonoBehaviour
 
         Destroy(gameObject);
         SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
+
+        CinemachineShake.Instance.ShakeCamera(7f, .15f);
     }
 
     private void Update()

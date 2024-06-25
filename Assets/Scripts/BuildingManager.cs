@@ -60,6 +60,11 @@ public class BuildingManager : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetMouseButtonDown(1) && activeBuildingType != null)
+        {
+            SetActiveBuildingType(null);
+        }
     }
 
     public void SetActiveBuildingType(BuildingTypeSO buildingType)
